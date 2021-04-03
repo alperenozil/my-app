@@ -14,7 +14,7 @@ class Counter extends Component {
             <span style={this.styles}className="badge badge-primary m-2">{this.state.count}</span>
             <button className="btn btn-secondary btn-sm">Button Alperen</button>
             <ul>
-                {this.state.tags.map(tag=><li>alperen</li>)}
+                {this.state.tags.map(item=><li key={item}>{item}</li>)}
             </ul>
         </React.Fragment>);
     }
