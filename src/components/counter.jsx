@@ -8,8 +8,12 @@ class Counter extends Component {
     styles={
         fontSize:'24px'
     };
+    constructor(){
+        super();
+        this.handleIncrement=this.handleIncrement.bind(this);
+    }
     handleIncrement(){
-        console.log('increment clicked');
+        console.log('increment clicked',this);
     }
     renderTags(){
         if(this.state.tags.length==0) return <p>There are no tags!</p>;
@@ -23,7 +27,10 @@ class Counter extends Component {
         return (
         <React.Fragment>
             <span style={this.styles}className="badge badge-primary m-2">{this.state.count}</span>
-            <button onClick={this.handleIncrement} className="btn btn-secondary btn-sm">Button Alperen</button>
+            <button 
+                onClick={this.handleIncrement} 
+                className="btn btn-secondary btn-sm">Button Alperen
+            </button>
             {this.state.tags.length === 0 && 'Please create a new tag'}
             {this.renderTags()} 
         </React.Fragment>);
