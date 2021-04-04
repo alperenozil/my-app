@@ -8,11 +8,11 @@ class Counter extends Component {
     styles={
         fontSize:'24px'
     };
-    constructor(){
+    /* constructor(){
         super();
         this.handleIncrement=this.handleIncrement.bind(this);
-    }
-    handleIncrement(){
+    } */
+    handleIncrement=()=>{
         console.log('increment clicked',this);
     }
     renderTags(){
