@@ -3,11 +3,14 @@ import React, { Component } from 'react';
 class Counter extends Component {
     state={
         count:0,
-        tags:[]
+        tags:['first','second','third','fourth']
     };
     styles={
         fontSize:'24px'
     };
+    handleIncrement(){
+        console.log('increment clicked');
+    }
     renderTags(){
         if(this.state.tags.length==0) return <p>There are no tags!</p>;
         return (
@@ -20,8 +23,9 @@ class Counter extends Component {
         return (
         <React.Fragment>
             <span style={this.styles}className="badge badge-primary m-2">{this.state.count}</span>
-            <button className="btn btn-secondary btn-sm">Button Alperen</button>
-            {this.renderTags()}
+            <button onClick={this.handleIncrement} className="btn btn-secondary btn-sm">Button Alperen</button>
+            {this.state.tags.length === 0 && 'Please create a new tag'}
+            {this.renderTags()} 
         </React.Fragment>);
     }
 }
