@@ -17,7 +17,7 @@ class Counter extends Component {
         console.log('increment clicked',this.state.count);
     }
     renderTags(){
-        if(this.state.tags.length==0) return <p>There are no tags!</p>;
+        if(this.state.tags.length===0) return <p>There are no tags!</p>;
         return (
         <ul>
             {this.state.tags.map(item=><li key={item}>{item}</li>)}
@@ -25,6 +25,7 @@ class Counter extends Component {
         );
     }
     render() { 
+        console.log('props',this.props)
         return (
         <React.Fragment>
             <span style={this.styles}className="badge badge-primary m-2">{this.state.count}</span>
