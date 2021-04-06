@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 class Counter extends Component {
     state={
-        count:0,
+        value:this.props.value,
         tags:['first','second','third','fourth']
     };
     styles={
@@ -13,8 +13,8 @@ class Counter extends Component {
         this.handleIncrement=this.handleIncrement.bind(this);
     } */
     handleIncrement=()=>{
-        this.setState({ count:this.state.count+1 })
-        console.log('increment clicked',this.state.count);
+        this.setState({ value:this.state.value+1 })
+        console.log('increment clicked',this.state.value);
     }
     renderTags(){
         if(this.state.tags.length===0) return <p>There are no tags!</p>;
@@ -25,10 +25,9 @@ class Counter extends Component {
         );
     }
     render() { 
-        console.log('props',this.props)
         return (
         <React.Fragment>
-            <span style={this.styles}className="badge badge-primary m-2">{this.state.count}</span>
+            <span style={this.styles}className="badge badge-primary m-2">{this.state.value}</span>
             <button 
                 onClick={this.handleIncrement} 
                 className="btn btn-secondary btn-sm">Button Alperen
