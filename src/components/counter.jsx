@@ -26,20 +26,19 @@ class Counter extends Component {
     }
     render() { 
         return (
-        <React.Fragment>
+        <div>
             <span style={this.styles}className="badge badge-primary m-2">{this.state.value}</span>
             <button 
                 onClick={this.handleIncrement} 
                 className="btn btn-secondary btn-sm">Increment
             </button>
-            <span>    </span>
             <button 
-                onClick={this.handleIncrement} 
-                className="btn btn-danger btn-sm">Delete
+                onClick={this.props.onDelete} 
+                className="btn btn-danger btn-sm m-2">Delete
             </button>
             {this.state.tags.length === 0 && 'Please create a new tag'}
             {this.renderTags()} 
-        </React.Fragment>);
+        </div>);
     }
 }
  
