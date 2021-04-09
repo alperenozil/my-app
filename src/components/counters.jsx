@@ -32,5 +32,4 @@ class Counters extends Component {
          );
     }
 }
- 
 export default Counters;
